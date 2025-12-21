@@ -11,6 +11,8 @@ const roles = [
   'AI/ML Developer',
 ]
 
+const heroTitle = "Hi, I'm Swayam Patwa"
+
 export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [currentRole, setCurrentRole] = useState(0)
@@ -121,7 +123,7 @@ export default function Hero() {
             variants={fadeInUp}
             className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
           >
-            <span className="gradient-text">{`Hi, I'm Swayam Patwa`}</span>
+            <span className="gradient-text">{heroTitle}</span>
             <br />
             <span className="text-white">
               <AnimatePresence mode="wait">

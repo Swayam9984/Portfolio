@@ -7,6 +7,8 @@ import { FiMail, FiPhone, FiMapPin, FiSend, FiGithub, FiLinkedin, FiTwitter } fr
 import { fadeInUp, staggerContainer } from '@/lib/animations'
 import toast from 'react-hot-toast'
 
+const contactDescription = "Have a project in mind or want to collaborate? Let's connect and build something amazing together."
+
 export default function Contact() {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -118,8 +120,7 @@ export default function Contact() {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-neon-cyan to-neon-purple mx-auto mb-8" />
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              {`Have a project in mind or want to collaborate? Let's connect and
-              build something amazing together.`}
+              {contactDescription}
             </p>
           </motion.div>
 
