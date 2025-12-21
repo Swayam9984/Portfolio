@@ -2,7 +2,7 @@
 
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
-import { FiAward, FiTrophy, FiCode, FiBriefcase } from 'react-icons/fi'
+import { FiAward, FiCode, FiBriefcase } from 'react-icons/fi'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
 import { useEffect, useState } from 'react'
 import type { IconType } from 'react-icons'
@@ -41,7 +41,7 @@ const achievements = [
   {
     title: 'Winner',
     subtitle: 'Hackathon Code Active 3.O',
-    icon: FiTrophy,
+    icon: FiAward,
     color: 'from-yellow-400 to-orange-500',
     description: 'Secured 1st place in competitive hackathon',
     year: '2024',
