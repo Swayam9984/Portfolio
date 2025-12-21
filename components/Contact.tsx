@@ -118,7 +118,7 @@ export default function Contact() {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-neon-cyan to-neon-purple mx-auto mb-8" />
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Have a project in mind or want to collaborate? Let&#39;s connect and
+              Have a project in mind or want to collaborate? Let&apos;s connect and
               build something amazing together.
             </p>
           </motion.div>
