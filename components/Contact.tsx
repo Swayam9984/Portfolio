@@ -45,7 +45,7 @@ export default function Contact() {
       const data = await response.json()
 
       if (response.ok) {
-        toast.success('Message sent successfully! I&apos;ll get back to you soon.')
+        toast.success('Message sent successfully! I&#39;ll get back to you soon.')
         setFormData({ name: '', email: '', message: '' })
         setFormStatus('success')
       } else {
@@ -118,7 +118,7 @@ export default function Contact() {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-neon-cyan to-neon-purple mx-auto mb-8" />
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Have a project in mind or want to collaborate? Let&apos;s connect and
+              Have a project in mind or want to collaborate? Let&#39;s connect and
               build something amazing together.
             </p>
           </motion.div>

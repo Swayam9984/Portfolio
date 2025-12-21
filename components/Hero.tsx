@@ -121,7 +121,7 @@ export default function Hero() {
             variants={fadeInUp}
             className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
           >
-            <span className="gradient-text">Hi, I&apos;m Swayam Patwa</span>
+            <span className="gradient-text">Hi, I&#39;m Swayam Patwa</span>
             <br />
             <span className="text-white">
               <AnimatePresence mode="wait">
