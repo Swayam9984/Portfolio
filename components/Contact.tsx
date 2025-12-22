@@ -98,7 +98,7 @@ export default function Contact() {
   ]
 
   const socialLinks = [
-    { icon: FiGithub, href: 'https://github.com/swayamtosscs-svg', label: 'GitHub' },
+    { icon: FiGithub, href: 'https://github.com/Swayamtosscs', label: 'GitHub' },
     { icon: FiLinkedin, href: 'https://www.linkedin.com/in/swayam-patwa-793490256', label: 'LinkedIn' },
   ]
 

@@ -36,7 +36,7 @@ export default function Hero() {
   }, [])
 
   const socialLinks = [
-    { icon: FiGithub, href: 'https://github.com/swayamtosscs-svg', label: 'GitHub' },
+    { icon: FiGithub, href: 'https://github.com/Swayamtosscs', label: 'GitHub' },
     { icon: FiLinkedin, href: 'https://www.linkedin.com/in/swayam-patwa-793490256', label: 'LinkedIn' },
     { icon: FiMail, href: '#contact', label: 'Email' },
   ]
@@ -44,7 +44,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-28"
     >
       {/* Animated gradient blobs */}
       <div className="absolute inset-0 overflow-hidden">
