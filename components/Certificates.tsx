@@ -32,18 +32,20 @@ function CertificateImagesSlider({
 }) {
   const [index, setIndex] = useState(0)
 
-  if (!images.length) return null
-
-  const currentImage = images[index]
-
   // Auto-slide through images every 4 seconds
   useEffect(() => {
+    if (!images.length) return
+
     const interval = setInterval(() => {
       setIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))
     }, 4000)
 
     return () => clearInterval(interval)
   }, [images.length])
+
+  if (!images.length) return null
+
+  const currentImage = images[index]
 
   const goPrev = () => {
     setIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))
