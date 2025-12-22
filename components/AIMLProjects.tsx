@@ -2,7 +2,7 @@
 
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
-import { FiGithub, FiExternalLink, FiTrendingUp, FiBrain, FiCamera, FiCode } from 'react-icons/fi'
+import { FiGithub, FiExternalLink, FiTrendingUp, FiCpu, FiCamera, FiCode } from 'react-icons/fi'
 import { fadeInUp, staggerContainer, hoverLift } from '@/lib/animations'
 import type { IconType } from 'react-icons'
 
@@ -21,7 +21,7 @@ const aimlProjects = [
     description: 'Production-ready sentiment analysis service using transformer models (BERT) with multi-language support and real-time inference.',
     tech: ['Python', 'TensorFlow', 'BERT', 'FastAPI', 'Docker'],
     metrics: { accuracy: '92%', languages: '5', latency: '<100ms' },
-    icon: FiBrain,
+    icon: FiCpu,
     color: 'from-purple-500 to-pink-500',
     visualization: 'sentiment',
   },
@@ -39,7 +39,7 @@ const aimlProjects = [
     description: 'Hybrid recommendation system combining collaborative filtering and deep learning for personalized content delivery.',
     tech: ['Python', 'PyTorch', 'Neural Collaborative Filtering', 'Redis', 'MongoDB'],
     metrics: { precision: '89%', recall: '87%', users: '100K+' },
-    icon: FiBrain,
+    icon: FiCpu,
     color: 'from-orange-500 to-red-500',
     visualization: 'recommendation',
   },
