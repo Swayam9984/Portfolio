@@ -27,7 +27,7 @@ const projects: Project[] = [
     live: 'https://project1.great-site.net/',
     color: 'from-blue-500 to-cyan-500',
     featured: true,
-    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=800&h=400&fit=crop',
   },
   {
     title: 'Amazon Clone (Full Stack)',
@@ -37,7 +37,7 @@ const projects: Project[] = [
     live: 'https://amazon-clone-flax-phi-91.vercel.app/signup',
     color: 'from-orange-500 to-red-500',
     featured: true,
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=800&h=400&fit=crop',
   },
   {
     title: 'DSA Instructor',
@@ -58,7 +58,7 @@ const projects: Project[] = [
     live: '',
     color: 'from-green-500 to-emerald-500',
     featured: false,
-    image: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&h=400&fit=crop',
   },
 ]
 

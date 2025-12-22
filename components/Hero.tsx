@@ -1,9 +1,11 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FiDownload, FiGithub, FiLinkedin, FiMail, FiTwitter } from 'react-icons/fi'
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer } from '@/lib/animations'
+import profileImg from '@/assests/WhatsApp Image 2025-12-22 at 1.02.36 PM.jpeg'
 
 const roles = [
   'Full Stack Developer',
@@ -96,6 +98,22 @@ export default function Hero() {
           animate="visible"
           className="text-center"
         >
+          {/* Profile image */}
+          <motion.div
+            variants={fadeInUp}
+            className="mb-6 flex justify-center"
+          >
+            <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-2 border-neon-cyan/60 shadow-[0_0_40px_rgba(34,211,238,0.5)]">
+              <Image
+                src={profileImg}
+                alt="Swayam Patwa profile photo"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </motion.div>
+
           <motion.div
             variants={fadeInUp}
             className="mb-6 inline-block"

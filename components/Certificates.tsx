@@ -1,18 +1,112 @@
 'use client'
 
+import Image, { type StaticImageData } from 'next/image'
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
-import { FiAward, FiExternalLink } from 'react-icons/fi'
+import { useState, useEffect } from 'react'
+import { FiAward, FiExternalLink, FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
+import awsCertImg from '@/assests/aws certificate.jpg'
+import internshipCertImg from '@/assests/certificate of internship .jpg'
+import hackathonPosterImg from '@/assests/4.jpg'
+import hackathonStageImg from '@/assests/hacathon imag 2.jpg'
+import hackathonTrophyImg from '@/assests/hackaton image 1.jpg'
+import hackathonFirstImg from '@/assests/hacathon imag e.jpg'
+import yuktiCertificateImg from '@/assests/yukti innovation cahllenge.jpg'
+import yuktiMeetImg from '@/assests/yukti 1.jpg'
+import ideBootcampStageImg from '@/assests/iic.jpg'
+import ideBootcampFrameImg from '@/assests/icc 2.jpg'
+import ideBootcampGroupImg from '@/assests/cc 3.jpg'
+import sihWorkImg1 from '@/assests/1734247893640.jpg'
+import sihWorkImg2 from '@/assests/1734247899612.jpg'
+import sihWorkImg3 from '@/assests/1734247903115.jpg'
+
+type CertImage = StaticImageData | string
+
+function CertificateImagesSlider({
+  images,
+  title,
+}: {
+  images: CertImage[]
+  title: string
+}) {
+  const [index, setIndex] = useState(0)
+
+  if (!images.length) return null
+
+  const currentImage = images[index]
+
+  // Auto-slide through images every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))
+    }, 4000)
+
+    return () => clearInterval(interval)
+  }, [images.length])
+
+  const goPrev = () => {
+    setIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))
+  }
+
+  const goNext = () => {
+    setIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))
+  }
+
+  return (
+    <div className="mb-4">
+      <div className="relative w-full h-40 md:h-48 rounded-xl overflow-hidden border border-white/10 bg-black/40">
+        <Image
+          src={currentImage}
+          alt={`${title} photo ${index + 1}`}
+          fill
+          className="object-cover"
+        />
+
+        {/* Controls */}
+        <button
+          type="button"
+          onClick={goPrev}
+          className="absolute left-2 top-1/2 -translate-y-1/2 p-1 rounded-full bg-black/50 text-white hover:bg-black/70 transition"
+        >
+          <FiChevronLeft size={16} />
+        </button>
+        <button
+          type="button"
+          onClick={goNext}
+          className="absolute right-2 top-1/2 -translate-y-1/2 p-1 rounded-full bg-black/50 text-white hover:bg-black/70 transition"
+        >
+          <FiChevronRight size={16} />
+        </button>
+
+        {/* Dots */}
+        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+          {images.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => setIndex(i)}
+              className={`h-1.5 w-3 rounded-full ${
+                i === index ? 'bg-neon-cyan' : 'bg-white/30'
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
 
 const certificates = [
   {
     title: 'Hackathon Code Active 3.O',
     issuer: 'Winner',
     date: '2024',
-    description: 'Secured 1st place in competitive hackathon',
+    description: 'Secured 1st place in competitive hackathon (Grand Finale).',
     color: 'from-yellow-400 to-orange-500',
-    link: '#',
+    // First image: trophy + certificate (hackaton image 1.jpg), then other photos auto-slide
+    images: [hackathonTrophyImg, hackathonFirstImg, hackathonPosterImg, hackathonStageImg],
+    link: '',
   },
   {
     title: 'Smart India Hackathon 2024',
@@ -20,15 +114,46 @@ const certificates = [
     date: '2024',
     description: 'National level hackathon grand finale',
     color: 'from-purple-400 to-pink-500',
-    link: '#',
+    images: [sihWorkImg1, sihWorkImg2, sihWorkImg3],
+    link: '',
   },
   {
-    title: 'Full Stack Development',
+    title: 'Full Stack Development Internship',
     issuer: 'Toss Consultancy Services',
-    date: '2024',
-    description: 'Professional internship completion certificate',
+    date: 'Aug 2024 – Nov 2025',
+    description: '6‑month full stack developer internship showcasing strong technical execution across multiple projects.',
     color: 'from-blue-400 to-cyan-500',
-    link: '#',
+    image: internshipCertImg,
+    link: '',
+  },
+  {
+    title: 'AWS Certified Cloud Practitioner – Practice Set',
+    issuer: 'AWS Training & Certification',
+    date: 'July 29, 2025',
+    description: 'Completed the official AWS practice question set for the AWS Certified Cloud Practitioner (CLF‑C02).',
+    color: 'from-emerald-400 to-sky-500',
+    image: awsCertImg,
+    link: '',
+  },
+  {
+    title: 'IIC Regional Meet 2025 – Raipur',
+    issuer: 'MoE’s Innovation Cell & IIC, AICTE',
+    date: '2nd December 2025',
+    description:
+      'Participated in the IIC Regional Meet 2025 at Shri Shankaracharya Institute of Professional Management & Technology, Raipur.',
+    color: 'from-indigo-400 to-sky-500',
+    images: [yuktiMeetImg, yuktiCertificateImg],
+    link: '',
+  },
+  {
+    title: 'Innovation, Design & Entrepreneurship (IDE) Bootcamp 2025',
+    issuer: 'MoE’s Innovation Cell & AICTE',
+    date: '17th – 21st February 2025',
+    description:
+      'Selected for the national-level IDE Bootcamp focused on innovation, design thinking, and entrepreneurship at Gyan Ganga Institute of Technology & Sciences, Jabalpur.',
+    color: 'from-pink-500 to-amber-400',
+    images: [ideBootcampStageImg, ideBootcampFrameImg, ideBootcampGroupImg],
+    link: '',
   },
 ]
 
@@ -107,17 +232,38 @@ export default function Certificates() {
                       {certificate.date}
                     </p>
 
-                    {/* View Certificate Link */}
-                    <motion.a
-                      href={certificate.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 text-gray-300 hover:text-neon-cyan transition-colors group/link"
-                      whileHover={{ x: 5 }}
-                    >
-                      <span className="text-sm">View Certificate</span>
-                      <FiExternalLink size={16} className="group-hover/link:translate-x-1 transition-transform" />
-                    </motion.a>
+                    {/* Certificate image preview (optional) */}
+                    {certificate.images ? (
+                      <CertificateImagesSlider
+                        images={certificate.images as CertImage[]}
+                        title={certificate.title}
+                      />
+                    ) : (
+                      certificate.image && (
+                        <div className="relative w-full h-40 md:h-48 rounded-xl overflow-hidden border border-white/10 mb-4 bg-black/40">
+                          <Image
+                            src={certificate.image}
+                            alt={`${certificate.title} certificate`}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                      )
+                    )}
+
+                    {/* View Certificate Link (shown only if a link is provided) */}
+                    {certificate.link && (
+                      <motion.a
+                        href={certificate.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 text-gray-300 hover:text-neon-cyan transition-colors group/link"
+                        whileHover={{ x: 5 }}
+                      >
+                        <span className="text-sm">View Certificate</span>
+                        <FiExternalLink size={16} className="group-hover/link:translate-x-1 transition-transform" />
+                      </motion.a>
+                    )}
                   </div>
 
                   {/* Hover Glow Effect */}
